@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Varai Jewellers — Book a private viewing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Varai Jewellers: today's gold rate, our collections, and a private viewing at the store. Book a time in under a minute.">
+<meta name="theme-color" content="#4A1325">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234A1325'/%3E%3Ccircle cx='32' cy='38' r='15' fill='none' stroke='%23E3C487' stroke-width='5'/%3E%3Cpath d='M25 16l7-8 7 8-7 8z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Noto+Serif+Devanagari:wght@500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--velvet:#4A1325;--velvet2:#360C1A;--gold:#E3C487;--ink:#1F1418;--paper:#F7F4F1;--line:#E6DFDA;--mute:#6E6268;--ok:#1F7A4D;--bad:#B3261E;
+--disp:'Cormorant Garamond','Noto Serif Devanagari',Georgia,serif;--body:'DM Sans','Noto Sans Devanagari',system-ui,-apple-system,'Segoe UI',sans-serif}
+*,*::before,*::after{box-sizing:border-box}*{margin:0}
+[hidden]{display:none!important}
+html{overflow-x:hidden;scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+html[lang=hi] body{line-height:1.7}
+.pr,.rgrid b,.code,.stat b,.rr b{font-variant-numeric:lining-nums tabular-nums;font-feature-settings:'lnum' 1,'tnum' 1}
+button,input,select{font:inherit;color:inherit}button{cursor:pointer}a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.light :focus-visible,.card :focus-visible,#admin :focus-visible{outline-color:var(--velvet)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--disp);font-weight:600;letter-spacing:-.005em;line-height:1.08;font-feature-settings:'lnum' 1}
+html[lang=hi] h1,html[lang=hi] h2,html[lang=hi] h3{letter-spacing:0;line-height:1.3;font-weight:600}
+html[lang=hi] .pb h3{font-size:20px}html[lang=hi] .card h3{font-size:28px}html[lang=hi] .logo,html[lang=hi] .addr{font-weight:600}
+h2{font-size:clamp(38px,5vw,62px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 26px;border-radius:99px;border:1.5px solid var(--velvet);background:var(--velvet);color:#fff;font-weight:600;letter-spacing:.01em;text-decoration:none;transition:background .15s,transform .1s}
+.btn:hover{background:var(--velvet2)}.btn:active{transform:translateY(1px)}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--velvet2)}.btn.gold:hover{background:#d6b571}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}.btn.ghost:hover{background:var(--ink);color:#fff}
+.btn.line{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}.btn.line:hover{background:#fff;color:var(--velvet)}
+.btn.sm{min-height:40px;padding:0 18px;font-size:14px}
+header{position:sticky;top:0;z-index:30;background:var(--velvet);color:#fff;padding-top:env(safe-area-inset-top,0px);border-bottom:1px solid rgba(227,196,135,.25)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-size:28px;font-weight:700;text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:28px;font-weight:500;font-size:15px}nav a{text-decoration:none;opacity:.8}nav a:hover{opacity:1}
+.right{display:flex;gap:10px;align-items:center}
+.lang{display:flex;background:rgba(255,255,255,.12);border-radius:99px;padding:3px}
+.lang button{border:0;background:none;border-radius:99px;min-width:42px;height:34px;font-weight:600;font-size:14px;color:#fff}
+.lang button.on{background:var(--gold);color:var(--velvet2)}
+/* hero: velvet tray */
+.hero{background:radial-gradient(ellipse 60% 70% at 72% 45%,#7A2540 0%,var(--velvet) 55%,var(--velvet2) 100%);color:#fff;padding:56px 0 72px;overflow:hidden}
+.hgrid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center}
+.open{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(227,196,135,.5);color:var(--gold);font-weight:500;font-size:14px;padding:6px 14px;border-radius:99px}
+.open i{width:8px;height:8px;border-radius:50%;background:#6FD39A}.open.shut i{background:#F0877B}
+h1{font-size:clamp(50px,6.8vw,96px);line-height:1;font-weight:600;margin:22px 0}
+html[lang=hi] h1{font-size:clamp(36px,5vw,64px);line-height:1.22}
+.hero .lead{font-size:19px;max-width:44ch;color:#ecd9df}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.ring{width:100%;max-width:440px;justify-self:center;filter:drop-shadow(0 30px 40px rgba(0,0,0,.35))}
+/* rates */
+.rates{background:var(--gold);color:var(--velvet2)}
+.rgrid{display:flex;gap:10px 40px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:16px 24px}
+.rgrid b{font-family:var(--disp);font-size:27px;font-weight:700}.rgrid small{font-weight:500;opacity:.8}
+.rr{display:flex;gap:28px;flex-wrap:wrap}.rr div{display:flex;flex-direction:column;line-height:1.2}
+/* collection */
+.sec{padding:88px 0}
+.mhead{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}.mhead p{color:var(--mute);max-width:42ch}
+.tabs{display:flex;gap:8px;margin:30px 0 8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.tabs button{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:10px 22px;font-weight:500;white-space:nowrap;min-height:46px}
+.tabs button.on{background:var(--velvet);border-color:var(--velvet);color:#fff}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.cnt{color:var(--mute);font-size:14px;margin:10px 0 18px}
+.pcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:box-shadow .2s,transform .2s}
+.pcard:hover{box-shadow:0 14px 34px rgba(74,19,37,.14);transform:translateY(-2px)}
+.ph{position:relative;aspect-ratio:1/1;background:radial-gradient(circle at 50% 40%,#fff 0%,#F1E8E3 100%);display:grid;place-items:center;overflow:hidden}
+.ph svg{width:34%;height:34%;stroke:var(--velvet);fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;opacity:.35}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;top:12px;left:12px;z-index:1;background:var(--velvet);color:var(--gold);font-weight:600;font-size:12px;padding:4px 10px;border-radius:99px}
+.pb{display:flex;flex-direction:column;flex:1;padding:16px 18px 18px}
+.pb h3{font-size:26px;line-height:1.1}
+.pcode{font-size:12px;color:var(--mute);margin-top:2px}
+.spec{margin:12px 0 16px;display:grid;gap:0;font-size:14px}
+.spec div{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.spec div:last-child{border:0}.spec dt{color:var(--mute)}.spec dd{font-weight:600;text-align:right;margin:0}
+.pb .btn{margin-top:auto;width:100%;min-height:46px;font-size:15px}
+.note{margin-top:18px;color:var(--mute);font-size:14px}
+/* booking */
+.book{background:var(--velvet);color:#fff;padding:88px 0}
+.bgrid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:56px;align-items:start;margin-top:8px}
+.book .lead{color:#ecd9df;margin-top:14px;max-width:40ch}
+.perks{list-style:none;padding:0;margin-top:26px;display:grid;gap:12px;font-weight:500}
+.perks li{display:flex;gap:12px;align-items:center}.perks svg{flex:none;background:var(--gold);border-radius:50%;padding:4px}
+.card{background:var(--paper);color:var(--ink);border-radius:20px;padding:clamp(20px,3vw,34px);min-height:460px;display:flex;flex-direction:column;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.prog{display:flex;gap:6px;margin-bottom:16px}.prog i{flex:1;height:4px;border-radius:4px;background:var(--line)}.prog i.on{background:var(--velvet)}
+.step{font-size:14px;font-weight:500;color:var(--mute)}.card h3{font-size:34px;margin:4px 0 4px}
+.lbl{display:block;font-weight:600;font-size:15px;margin:22px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chips.scroll{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -4px;padding:4px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:9px 16px;min-height:48px;font-weight:500;font-size:15px;text-align:center;line-height:1.2;flex:none}
+.chip small{display:block;font-size:12px;color:var(--mute);font-weight:400}.chip:hover{border-color:var(--velvet)}
+.chip.on{background:var(--velvet);border-color:var(--velvet);color:#fff}.chip.on small,.chip.on em{color:#ecd9df}
+.chip[disabled]{opacity:.4;text-decoration:line-through;cursor:not-allowed}.chip em{display:block;font-style:normal;font-size:11px;color:var(--bad);font-weight:600}
+.times{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.times .chip{padding:9px 2px}
+.sum{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:12px 14px;font-weight:500;margin-top:8px}
+input{width:100%;padding:14px;border:1.5px solid var(--ink);border-radius:12px;background:#fff;min-height:52px}input:focus{outline:3px solid var(--gold);outline-offset:0}
+.err{color:var(--bad);font-size:14px;margin-top:8px;min-height:20px;font-weight:500}.hint{color:var(--mute);font-size:14px;margin-top:8px}
+.nav2{margin-top:auto;padding-top:22px;display:flex;justify-content:space-between;gap:10px}.nav2 .btn:last-child{flex:1}
+.done{text-align:center;margin:auto 0}
+.tick{width:64px;height:64px;border-radius:50%;background:var(--velvet);margin:0 auto 14px;display:grid;place-items:center;animation:pop .4s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{from{transform:scale(.4);opacity:0}}
+.ticket{margin:18px 0;border:1.5px dashed var(--velvet);border-radius:14px;padding:16px;background:#fff}
+.code{font-family:var(--disp);font-weight:700;font-size:46px;letter-spacing:.06em;color:var(--velvet);line-height:1.1}
+.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+/* visit */
+.vgrid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:64px;margin-top:36px}
+.addr{font-family:var(--disp);font-weight:600;font-size:clamp(30px,3.8vw,46px);line-height:1.2}
+.hrs div{display:flex;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);font-size:18px}
+footer{border-top:1px solid var(--line);padding:24px 0 32px;font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}footer a{margin-left:14px}
+/* admin */
+#admin{display:none;padding:40px 0 80px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}
+.stat,.panel{border:1.5px solid var(--ink);border-radius:16px;padding:18px;background:#fff}.stat b{font-family:var(--disp);font-weight:700;font-size:46px;display:block;line-height:1.1}.stat span{color:var(--mute);font-size:14px}
+.panel{margin-bottom:22px}.panel .rin{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin-top:8px}.panel input{max-width:200px}
+.tw{overflow-x:auto;border:1.5px solid var(--ink);border-radius:16px;background:#fff}
+table{width:100%;border-collapse:collapse;min-width:700px}th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}th{font-size:13px;color:var(--mute)}tr:last-child td{border:0}
+.pill{padding:4px 11px;border-radius:99px;font-size:13px;font-weight:600}
+.pill.confirmed{background:#e3f1e9;color:var(--ok)}.pill.cancelled{background:#f8dcd7;color:var(--bad)}.pill.visited{background:#f1e4cc;color:#7a5a12}
+.pin{max-width:340px;margin:80px auto;text-align:center}.pin input{text-align:center;letter-spacing:.5em;font-size:24px;margin:16px 0}
+
+/* demo guide */
+.gfab{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px 0 14px;border-radius:99px;border:1.5px solid var(--gold);background:var(--velvet2);color:#fff;font-weight:600;font-size:15px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.gfab:hover{background:var(--velvet)}.gfab b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--gold);color:var(--velvet2);font-size:15px}
+.gov{position:fixed;inset:0;z-index:60;background:rgba(20,6,12,.66);display:flex;align-items:center;justify-content:center;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.gbox{background:var(--paper);color:var(--ink);border-radius:22px;max-width:640px;width:100%;max-height:100%;overflow-y:auto;padding:clamp(22px,4vw,36px);box-shadow:0 30px 80px rgba(0,0,0,.5);border-top:6px solid var(--gold)}
+.gbox :focus-visible{outline-color:var(--velvet)}
+.gtag{display:inline-block;background:var(--velvet);color:var(--gold);font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:99px}
+html[lang=hi] .gtag{letter-spacing:0;text-transform:none}
+.gbox h2{font-size:clamp(32px,5vw,44px);margin:12px 0 8px}.gbox .gp{color:var(--mute);font-size:16px}
+.gsteps{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:14px;counter-reset:g}
+.gsteps li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;align-items:start;counter-increment:g}
+.gsteps li::before{content:counter(g);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--velvet);color:var(--gold);font-family:var(--disp);font-weight:700;font-size:20px}
+.gsteps b{display:block;font-size:16px}.gsteps span{display:block;color:var(--mute);font-size:15px;line-height:1.5}
+.gnote{margin-top:20px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:12px 14px;font-size:14px;color:var(--mute)}
+.gact{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.gact .btn{flex:1;min-width:150px}
+@media(max-width:480px){.gfab span{display:none}.gfab{padding:0 11px}}
+@media(max-width:900px){nav{display:none}.hgrid,.vgrid,.bgrid{grid-template-columns:minmax(0,1fr);gap:36px}.hero{padding:36px 0 48px}.ring{max-width:300px}.sec,.book{padding:60px 0}}
+@media(max-width:480px){.wrap{padding:0 16px}.btn.book-top{display:none}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.times{grid-template-columns:repeat(3,minmax(0,1fr))}h3{font-size:30px}.rgrid{padding:14px 16px}.rr{gap:18px}.list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.pb{padding:12px}.pb h3{font-size:22px}.spec{font-size:13px}.pb .btn{font-size:13px;padding:0 8px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="site">
+<header><div class="wrap bar">
+  <a class="logo" href="#top"><svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="40" r="14" fill="none" stroke="#E3C487" stroke-width="5"/><path d="M25 18l7-9 7 9-7 8z" fill="#fff"/></svg>Varai Jewellers</a>
+  <nav><a href="#collection" data-i="n_col"></a><a href="#book" data-i="n_book"></a><a href="#visit" data-i="n_visit"></a></nav>
+  <div class="right"><div class="lang" role="group" aria-label="Language"><button data-l="en">EN</button><button data-l="hi">हिं</button></div><a class="btn gold sm book-top" href="#book" data-i="book"></a></div>
+</div></header>
+<main id="top">
+<section class="hero"><div class="wrap hgrid">
+  <div>
+    <span class="open" id="open"><i></i><span id="openTxt"></span></span>
+    <h1 data-i="h1"></h1>
+    <p class="lead" data-i="hp"></p>
+    <div class="cta"><a class="btn gold" href="#book" data-i="book"></a><a class="btn line" href="#collection" data-i="seecol"></a></div>
+  </div>
+  <svg class="ring" viewBox="0 0 320 320" aria-hidden="true">
+    <defs><radialGradient id="g" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#fff" stop-opacity=".25"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
+    <circle cx="160" cy="165" r="150" fill="url(#g)"/>
+    <circle cx="160" cy="205" r="82" fill="none" stroke="#E3C487" stroke-width="16"/>
+    <circle cx="160" cy="205" r="71" fill="none" stroke="#B89556" stroke-width="2" opacity=".7"/>
+    <path d="M122 100l38-44 38 44-38 52z" fill="#fff"/><path d="M122 100h76M160 56l-16 44 16 52 16-52z" stroke="#CFC6D4" stroke-width="2" fill="none"/>
+    <path d="M144 100l16 52M176 100l-16 52" stroke="#CFC6D4" stroke-width="1.5" fill="none"/>
+    <path d="M122 100l22 0-16 -20z" fill="#EFE9F2"/>
+    <path d="M262 70l4 10 10 4-10 4-4 10-4-10-10-4 10-4zM52 132l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#E3C487"/>
+  </svg>
+</div></section>
+
+<section class="rates"><div class="wrap rgrid">
+  <b data-i="rate_h"></b>
+  <div class="rr" id="rr"></div>
+  <small id="rnote"></small>
+</div></section>
+
+<section class="sec light" id="collection"><div class="wrap">
+  <div class="mhead"><h2 data-i="col_h"></h2><p data-i="col_p"></p></div>
+  <div class="tabs" id="tabs" role="tablist"></div>
+  <p class="cnt" id="cnt" aria-live="polite"></p>
+  <div class="list" id="list"></div>
+  <p class="note" data-i="est"></p>
+</div></section>
+
+<section class="book" id="book"><div class="wrap">
+  <h2 data-i="book_h"></h2>
+  <div class="bgrid">
+    <div><p class="lead" data-i="book_p"></p>
+      <ul class="perks">
+        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#360C1A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12.5l4 4 8-9"/></svg><span data-i="b1"></span></li>
+        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#360C1A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12.5l4 4 8-9"/></svg><span data-i="b2"></span></li>
+        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#360C1A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12.5l4 4 8-9"/></svg><span data-i="b3"></span></li>
+      </ul></div>
+    <div class="card" id="panel" aria-live="polite"></div>
+  </div>
+</div></section>
+
+<section class="sec light" id="visit"><div class="wrap">
+  <h2 data-i="visit_h"></h2>
+  <div class="vgrid">
+    <div><p class="addr" data-i="addr"></p><p style="margin:18px 0 26px;font-size:20px;font-weight:500">+91 82919 45264</p>
+      <div class="cta" style="margin:0"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=jewellery+store" data-i="dir"></a><a class="btn ghost" href="tel:+918291945264" data-i="call"></a></div></div>
+    <div class="hrs"><div><span data-i="wk"></span><b>11:00 am – 8:00 pm</b></div><div><span data-i="we"></span><b>11:00 am – 8:30 pm</b></div></div>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 Varai Jewellers</span><span><span data-i="by"></span> <a style="margin-left:4px" href="https://www.varaitech.in" target="_blank" rel="noopener">Varai Technologies</a><a href="#admin" data-i="staff"></a></span></div></footer>
+</div>
+<div id="admin"><div class="wrap" id="adminBody"></div></div>
+<button class="gfab" id="gfab" type="button" aria-haspopup="dialog"><b aria-hidden="true">?</b><span data-i="g_btn"></span></button>
+<div class="gov" id="gov" hidden role="dialog" aria-modal="true" aria-labelledby="gtitle"><div class="gbox">
+  <span class="gtag" data-i="g_tag"></span>
+  <h2 id="gtitle" data-i="g_h"></h2>
+  <p class="gp" data-i="g_p"></p>
+  <ol class="gsteps" id="gsteps"></ol>
+  <p class="gnote" data-i="g_note"></p>
+  <div class="gact"><button class="btn" id="gstart" type="button" data-i="g_go"></button><button class="btn ghost" id="gstaff" type="button" data-i="g_staff"></button></div>
+</div></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const T={
+en:{n_col:"Collections",n_book:"Book a viewing",n_visit:"Visit",book:"Book a viewing",seecol:"See collections",h1:"Jewellery made to be kept for generations.",
+hp:"Check today's gold rate, browse our collections, and book a private viewing at the store. No waiting at the counter.",
+rate_h:"Today's gold rate",per:"per gram",rnote:"Demo rates, updated by staff",col_h:"Our collections",col_p:"Hallmarked gold and certified stones. Tap Enquire on WhatsApp for today's price.",
+est:"Prices are not fixed on the website because they follow the daily gold price. The final price depends on net gold weight, making charges and stones, and is confirmed at the store. Details shown are sample figures.",ask:"Enquire on WhatsApp",l_pur:"Purity",l_gross:"Gross weight",l_stone:"Stone weight",l_net:"Net gold weight",nostone:"No stones",pcs:" pieces",hm:"Hallmarked",
+book_h:"Book a private viewing",book_p:"Pick a time and we will keep a counter and a jeweller ready for you.",b1:"Instant booking code",b2:"Free to cancel, just call us",b3:"Visit is free, no obligation to buy",
+visit_h:"Visit the store",addr:"Shop 12, Zaveri Market Road, near the Station, Mumbai 400002",dir:"Get directions",call:"Call us",wk:"Monday to Friday",we:"Saturday and Sunday",by:"Website by",staff:"Staff",
+openNow:"Open now, till ",shut:"Closed now, opens ",step:"Step",of:"of",s1:"What are you looking for?",s2:"Pick a time",s3:"Your details",
+date:"Date",time:"Available times",name:"Your name",phone:"Mobile number",note:"Anything we should know? (optional)",
+next:"Continue",back:"Back",confirm:"Confirm viewing",today:"Today",tmrw:"Tomorrow",left:" left",full:"Full",
+e_time:"Pick a time to continue.",e_name:"Enter your name.",e_ph:"Enter a 10-digit mobile number.",e_gone:"That time just filled up. Pick another.",
+done:"Your viewing is booked!",donep:"Show this code at the store.",on:"for",another:"Book another viewing",wa:"Share on WhatsApp",
+a_h:"Viewings",a_pin:"Staff access",a_pin_p:"Enter PIN",a_go:"Open",a_bad:"Wrong PIN. Try again.",a_t:"Today",a_u:"Upcoming",a_g:"Total booked",a_when:"When",a_who:"Customer",a_for:"Looking for",a_st:"Status",a_code:"Code",a_none:"No bookings yet.",
+a_rate:"Update today's rate (24K gold, per gram)",a_save:"Save rate",a_saved:"Saved. Prices on the website now use this rate.",
+confirmed:"Confirmed",cancelled:"Cancelled",visited:"Visited",cancel:"Cancel",restore:"Restore",visit:"Mark visited",exit:"← Back to website",reset:"Reset demo data",
+g_btn:"Demo guide",g_tag:"Live demo",g_h:"Welcome! Here is how to explore this website.",g_p:"This is a working demo of your jeweller's website. Everything is clickable, so try it like a real customer, then see what the shop owner sees. It takes about 2 minutes.",
+g_s:[["Switch language","Tap EN or हिं at the top. The whole site changes between English and Hindi."],["Check the gold rate","The gold bar shows today's 24K, 22K and 18K rate per gram."],["Browse the collections","Pick Rings, Necklaces, Earrings and more. Each piece shows its weight, stone weight and gold purity. Tap Enquire on WhatsApp to ask today's price."],["Book a private viewing","Scroll to Book a private viewing. Choose what you want, a date and a time, then enter any name and a 10-digit mobile number. You will get a booking code."],["See it as the shop owner","Tap Open staff view below (PIN 1234). Your booking is in the list. You can mark visits, cancel, and change the gold rate. Then go back to the website and see the gold rate bar update."]],
+g_note:"This is demo data stored only on your own phone or computer. Nobody else sees what you type. Use Reset demo data in the staff view to start fresh.",g_go:"Start exploring",g_staff:"Open staff view",
+cats:{all:"All",ring:"Rings",neck:"Necklaces",ear:"Earrings",bang:"Bangles",bride:"Bridal"},
+wants:{bride:"Bridal",gold:"Gold",dia:"Diamond",gift:"Gift",silver:"Silver",other:"Not sure yet"}},
+hi:{n_col:"कलेक्शन",n_book:"समय बुक करें",n_visit:"पता",book:"समय बुक करें",seecol:"कलेक्शन देखें",h1:"ऐसे गहने जो पीढ़ियों तक साथ रहें।",
+hp:"आज का सोने का भाव देखिए, कलेक्शन देखिए और स्टोर पर आराम से देखने का समय बुक कीजिए। काउंटर पर इंतज़ार नहीं।",
+rate_h:"आज का सोने का भाव",per:"प्रति ग्राम",rnote:"डेमो भाव, स्टाफ़ द्वारा अपडेट",col_h:"हमारा कलेक्शन",col_p:"हॉलमार्क सोना और प्रमाणित रत्न। आज की कीमत जानने के लिए WhatsApp पर पूछें दबाएँ।",
+est:"कीमत वेबसाइट पर तय नहीं है क्योंकि यह रोज़ के सोने के भाव पर निर्भर है। अंतिम कीमत सोने के शुद्ध वज़न, मेकिंग चार्ज और रत्नों पर तय होती है और स्टोर पर बताई जाएगी। दिखाई गई जानकारी नमूना है।",ask:"WhatsApp पर पूछें",l_pur:"शुद्धता",l_gross:"कुल वज़न",l_stone:"रत्न का वज़न",l_net:"सोने का शुद्ध वज़न",nostone:"कोई रत्न नहीं",pcs:" नग",hm:"हॉलमार्क",
+book_h:"देखने का समय बुक करें",book_p:"समय चुनिए, हम आपके लिए काउंटर और ज्वैलर तैयार रखेंगे।",b1:"तुरंत बुकिंग कोड",b2:"रद्द करना मुफ़्त, बस फ़ोन करें",b3:"आना मुफ़्त है, खरीदना ज़रूरी नहीं",
+visit_h:"स्टोर पर आइए",addr:"दुकान 12, जवेरी मार्केट रोड, स्टेशन के पास, मुंबई 400002",dir:"रास्ता देखें",call:"फ़ोन करें",wk:"सोमवार से शुक्रवार",we:"शनिवार और रविवार",by:"वेबसाइट बनाई:",staff:"स्टाफ़",
+openNow:"अभी खुला है, रात ",shut:"अभी बंद है, खुलेगा ",step:"चरण",of:"/",s1:"आप क्या देख रहे हैं?",s2:"समय चुनें",s3:"आपकी जानकारी",
+date:"तारीख़",time:"उपलब्ध समय",name:"आपका नाम",phone:"मोबाइल नंबर",note:"कुछ बताना हो तो लिखें (ज़रूरी नहीं)",
+next:"आगे",back:"पीछे",confirm:"समय पक्का करें",today:"आज",tmrw:"कल",left:" बाकी",full:"भरा",
+e_time:"आगे बढ़ने के लिए समय चुनें।",e_name:"अपना नाम लिखें।",e_ph:"10 अंकों का मोबाइल नंबर लिखें।",e_gone:"यह समय अभी भर गया। दूसरा चुनें।",
+done:"आपका समय बुक हो गया!",donep:"स्टोर पर यह कोड दिखाइए।",on:"के लिए",another:"एक और समय बुक करें",wa:"WhatsApp पर भेजें",
+a_h:"बुकिंग",a_pin:"स्टाफ़ प्रवेश",a_pin_p:"पिन डालें",a_go:"खोलें",a_bad:"गलत पिन। फिर कोशिश करें।",a_t:"आज",a_u:"आने वाली",a_g:"कुल बुकिंग",a_when:"कब",a_who:"ग्राहक",a_for:"क्या देखना है",a_st:"स्थिति",a_code:"कोड",a_none:"अभी कोई बुकिंग नहीं।",
+a_rate:"आज का भाव अपडेट करें (24K सोना, प्रति ग्राम)",a_save:"भाव सेव करें",a_saved:"सेव हो गया। वेबसाइट की कीमतें अब इस भाव पर हैं।",
+confirmed:"पक्की",cancelled:"रद्द",visited:"आ गए",cancel:"रद्द करें",restore:"वापस लें",visit:"आ गए",exit:"← वेबसाइट पर वापस",reset:"डेमो डेटा रीसेट",
+g_btn:"डेमो गाइड",g_tag:"लाइव डेमो",g_h:"स्वागत है! इस वेबसाइट को ऐसे देखें।",g_p:"यह आपके ज्वैलर की वेबसाइट का चालू डेमो है। सब कुछ दबाकर देखिए, पहले ग्राहक की तरह, फिर दुकान के मालिक की तरह। बस 2 मिनट लगेंगे।",
+g_s:[["भाषा बदलें","ऊपर EN या हिं दबाइए। पूरी साइट अंग्रेज़ी और हिंदी में बदल जाती है।"],["सोने का भाव देखें","सोने वाली पट्टी में आज का 24K, 22K और 18K का भाव प्रति ग्राम दिखता है।"],["कलेक्शन देखें","अंगूठियाँ, हार, बालियाँ आदि चुनिए। हर गहने का वज़न, रत्न का वज़न और सोने की शुद्धता दिखती है। आज की कीमत पूछने के लिए WhatsApp पर पूछें दबाइए।"],["देखने का समय बुक करें","नीचे समय बुक करें वाले हिस्से में जाइए। क्या देखना है, तारीख़ और समय चुनिए, फिर कोई भी नाम और 10 अंकों का मोबाइल नंबर डालिए। आपको बुकिंग कोड मिलेगा।"],["दुकान मालिक की नज़र से देखें","नीचे स्टाफ़ व्यू खोलें दबाइए (पिन 1234)। आपकी बुकिंग सूची में दिखेगी। यहाँ से आना दर्ज करें, रद्द करें और सोने का भाव बदलें। फिर वेबसाइट पर लौटकर ऊपर का सोने का भाव बदलता देखिए।"]],
+g_note:"यह डेमो डेटा सिर्फ़ आपके अपने फ़ोन या कंप्यूटर में रहता है। आप जो लिखेंगे वह कोई और नहीं देखेगा। नए सिरे से शुरू करने के लिए स्टाफ़ व्यू में डेमो डेटा रीसेट दबाइए।",g_go:"देखना शुरू करें",g_staff:"स्टाफ़ व्यू खोलें",
+cats:{all:"सभी",ring:"अंगूठियाँ",neck:"हार",ear:"कान की बालियाँ",bang:"चूड़ियाँ",bride:"दुल्हन"},
+wants:{bride:"दुल्हन के गहने",gold:"सोना",dia:"हीरा",gift:"उपहार",silver:"चाँदी",other:"अभी पता नहीं"}}};
+const G={ring:'<circle cx="20" cy="26" r="9"/><path d="M16 14l4-6 4 6-4 4z"/>',neck:'<path d="M6 9c0 16 6 24 14 24s14-8 14-24"/><circle cx="20" cy="35" r="2.5"/>',ear:'<circle cx="20" cy="8" r="2.5"/><path d="M20 11v8M20 19c-6 0-8 7-4 13h8c4-6 2-13-4-13z"/>',bang:'<ellipse cx="20" cy="22" rx="14" ry="9"/><ellipse cx="20" cy="22" rx="10" ry="5.5"/>',bride:'<path d="M5 8c2 14 8 22 15 22s13-8 15-22"/><path d="M12 14c2 8 5 12 8 12s6-4 8-12"/>'};
+// cat, English, Hindi, gross g, stone g, karat, stone EN, stone HI, image file (images/<file>.jpg)
+const M=[["ring","Solitaire Band","सॉलिटेयर बैंड",4.2,.3,18,"Diamond","हीरा","solitaire-band"],["ring","Plain Gold Band","सादा सोने का छल्ला",5,0,22,"","","plain-gold-band"],["ring","Couple Rings","कपल रिंग्स",9,0,22,"","","couple-rings"],
+["neck","Temple Necklace","टेम्पल नेकलेस",38,0,22,"","","temple-necklace"],["neck","Kundan Choker","कुंदन चोकर",46,4.5,22,"Kundan, pearl","कुंदन, मोती","kundan-choker"],["neck","Light Chain Set","हल्की चेन सेट",14,0,22,"","","light-chain-set"],
+["ear","Jhumka Pair","झुमका जोड़ी",12,.8,22,"Pearl","मोती","jhumka-pair"],["ear","Stud Pair","टॉप्स",3.5,.4,18,"Diamond","हीरा","stud-pair"],["ear","Chandbali","चाँदबाली",16,1.2,22,"Ruby, pearl","माणिक, मोती","chandbali"],
+["bang","Gold Kada","सोने का कड़ा",28,0,22,"","","gold-kada"],["bang","Pair of Bangles","चूड़ियाँ जोड़ी",40,0,22,"","","pair-of-bangles"],["bang","Daily-wear Bangle","रोज़ की चूड़ी",10,0,22,"","","daily-bangle"],
+["bride","Bridal Haar Set","दुल्हन हार सेट",95,8,22,"Polki, pearl","पोल्की, मोती","bridal-haar-set"],["bride","Mangalsutra","मंगलसूत्र",22,1.5,22,"Black beads","काले मोती","mangalsutra"],["bride","Nath","नथ",8,.6,22,"Pearl","मोती","nath"]];
+const safe=(k,v)=>{try{return v===undefined?localStorage.getItem(k):localStorage.setItem(k,v)}catch(e){return null}};
+let L=safe("vj_lang")||"en",cat="all";
+const SLOTS=[];for(let h=11;h<=19;h++)SLOTS.push(h+":00",h+":30");
+const CAP=2,K="vj_book";
+const pad=n=>String(n).padStart(2,"0"),fmtT=s=>{const[h,m]=s.split(":").map(Number);return(h%12||12)+":"+pad(m)+" "+(h<12?"am":"pm")};
+const iso=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const addD=n=>{const d=new Date();d.setDate(d.getDate()+n);return d};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const loc=()=>L==="hi"?"hi-IN":"en-IN",inr=n=>"₹"+Math.round(n).toLocaleString("en-IN");
+const dLabel=s=>new Date(s+"T00:00").toLocaleDateString(loc(),{weekday:"short",day:"numeric",month:"short"});
+const rate24=()=>+safe("vj_rate")||12500, rateK=k=>rate24()*k/24*(k===22?0.9166/0.9167*1:1);
+function load(){try{const v=JSON.parse(safe(K));if(v)return v}catch(e){}
+  const t=iso(addD(0)),n=iso(addD(1));const s=[["12:00","Aarav Shah","bride"],["14:30","Meera Nair","dia"],["17:00","Rohan Iyer","gold"],["12:30","Sana Khan","gift"],["16:00","Dev Patel","bride"]].map((x,i)=>({id:"S"+i,date:i<3?t:n,time:x[0],name:x[1],want:x[2],phone:"9800000000",note:"",status:"confirmed",code:"VJ-"+(1000+i*37)}));
+  save(s);return s}
+function save(b){safe(K,JSON.stringify(b))}
+const used=(b,d,t)=>b.filter(x=>x.date===d&&x.time===t&&x.status!=="cancelled").length;
+function openStatus(){const n=new Date(),we=n.getDay()===0||n.getDay()===6,c=we?20.5:20,h=n.getHours()+n.getMinutes()/60,isOpen=h>=11&&h<c;
+  $("#open").classList.toggle("shut",!isOpen);$("#openTxt").textContent=isOpen?T[L].openNow+(we?"8:30 pm":"8 pm"):T[L].shut+(h<11?"11 am":"11 am")}
+function applyLang(){document.documentElement.lang=L;$$("[data-i]").forEach(e=>e.textContent=T[L][e.dataset.i]);
+  $$(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.l===L));
+  openStatus();renderRates();renderTabs();renderList();renderBook();renderGuide();if(location.hash==="#admin")renderAdmin()}
+function renderGuide(){$("#gsteps").innerHTML=T[L].g_s.map(x=>`<li><div><b>${x[0]}</b><span>${x[1]}</span></div></li>`).join("")}
+function openGuide(){renderGuide();$("#gov").hidden=false;$("#gstart").focus()}
+function closeGuide(){$("#gov").hidden=true;safe("vj_guide","1");$("#gfab").focus({preventScroll:true})}
+$("#gfab").onclick=openGuide;$("#gstart").onclick=closeGuide;
+$("#gstaff").onclick=()=>{$("#gov").hidden=true;safe("vj_guide","1");location.hash="#admin"};
+$("#gov").onclick=e=>{if(e.target.id==="gov")closeGuide()};
+addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#gov").hidden)closeGuide()});
+$$(".lang button").forEach(b=>b.onclick=()=>{L=b.dataset.l;safe("vj_lang",L);applyLang()});
+function renderRates(){const t=T[L];$("#rr").innerHTML=[24,22,18].map(k=>`<div><small>${k}K ${t.per}</small><b>${inr(rate24()*(k===24?1:k===22?.9167:.75))}</b></div>`).join("");$("#rnote").textContent=t.rnote}
+function renderTabs(){$("#tabs").innerHTML=Object.keys(T[L].cats).map(c=>`<button role="tab" aria-selected="${c===cat}" class="${c===cat?"on":""}" data-c="${c}">${T[L].cats[c]}</button>`).join("");
+  $$("#tabs button").forEach(b=>b.onclick=()=>{cat=b.dataset.c;renderTabs();renderList()})}
+function renderList(){const t=T[L],items=M.filter(m=>cat==="all"||m[0]===cat),g=n=>(+n).toFixed(2)+" g";
+  $("#cnt").textContent=items.length+" "+(L==="hi"?"गहने":"pieces");
+  $("#list").innerHTML=items.map((m,i)=>{const nm=L==="hi"?m[2]:m[1],st=L==="hi"?m[7]:m[6],net=m[3]-m[4],pur=m[5]+"K"+(m[5]===22?" (916)":m[5]===18?" (750)":" (999)"),
+  code="VJ-"+m[8].slice(0,3).toUpperCase()+(100+M.indexOf(m)),
+  msg="Hi, I'm interested in: "+m[1]+" ("+code+"), "+pur+", gross "+g(m[3])+", stone "+g(m[4])+". Please share today's price.";
+  return`<article class="pcard"><div class="ph"><span class="badge">${t.hm}</span><svg viewBox="0 0 40 40" aria-hidden="true">${G[m[0]]}</svg><img src="images/${m[8]}.jpg" alt="${esc(nm)}" loading="lazy" onerror="this.remove()"></div>
+  <div class="pb"><h3>${nm}</h3><p class="pcode">${code}</p>
+  <dl class="spec"><div><dt>${t.l_pur}</dt><dd>${pur}</dd></div><div><dt>${t.l_gross}</dt><dd>${g(m[3])}</dd></div><div><dt>${t.l_stone}</dt><dd>${m[4]?g(m[4])+" · "+st:t.nostone}</dd></div><div><dt>${t.l_net}</dt><dd>${g(net)}</dd></div></dl>
+  <a class="btn sm" target="_blank" rel="noopener" href="https://wa.me/918291945264?text=${encodeURIComponent(msg)}">${t.ask}</a></div></article>`}).join("")}
+
+/* booking */
+const fresh=()=>({step:1,want:"gold",date:iso(addD(0)),time:"",name:"",phone:"",note:"",err:"",code:""});
+let S=fresh();
+function dateChips(){return[0,1,2,3,4,5,6].map(n=>{const d=addD(n),v=iso(d),top=n===0?T[L].today:n===1?T[L].tmrw:d.toLocaleDateString(loc(),{weekday:"short"});
+  return`<button class="chip ${S.date===v?"on":""}" data-d="${v}">${top}<small>${d.toLocaleDateString(loc(),{day:"numeric",month:"short"})}</small></button>`}).join("")}
+const head=(t,title)=>`<div class="prog">${[1,2,3].map(i=>`<i class="${i<=S.step?"on":""}"></i>`).join("")}</div><span class="step">${t.step} ${S.step} ${t.of} 3</span><h3>${title}</h3>`;
+function renderBook(){
+  const t=T[L],b=load(),P=$("#panel");let h="";
+  if(S.step===1){
+    h=`${head(t,t.s1)}<div class="chips" style="margin-top:14px">${Object.keys(t.wants).map(k=>`<button class="chip ${S.want===k?"on":""}" data-w="${k}">${t.wants[k]}</button>`).join("")}</div>
+    <span class="lbl">${t.date}</span><div class="chips scroll">${dateChips()}</div>
+    <div class="nav2"><button class="btn" id="go">${t.next}</button></div>`;
+  }else if(S.step===2){
+    const now=new Date(),isToday=S.date===iso(now);
+    h=`${head(t,t.s2)}<div class="sum">${dLabel(S.date)}, ${t.wants[S.want]}</div><span class="lbl">${t.time}</span><div class="times">${SLOTS.map(s=>{
+      const[hh,mm]=s.split(":").map(Number),past=isToday&&(hh*60+mm<=now.getHours()*60+now.getMinutes()),left=CAP-used(b,S.date,s),dis=past||left<=0;
+      return`<button class="chip ${S.time===s?"on":""}" ${dis?"disabled":""} data-t="${s}">${fmtT(s)}${!dis&&left<=1?`<em>${left}${t.left}</em>`:dis&&!past?`<em>${t.full}</em>`:""}</button>`}).join("")}</div>
+    <p class="err">${S.err}</p><div class="nav2"><button class="btn ghost" id="bk">${t.back}</button><button class="btn" id="go">${t.next}</button></div>`;
+  }else if(S.step===3){
+    h=`${head(t,t.s3)}<div class="sum">${dLabel(S.date)}, ${fmtT(S.time)}, ${t.wants[S.want]}</div>
+    <label class="lbl" for="nm">${t.name}</label><input id="nm" autocomplete="name" value="${esc(S.name)}">
+    <label class="lbl" for="ph">${t.phone}</label><input id="ph" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel" value="${esc(S.phone)}" placeholder="98XXXXXXXX">
+    <label class="lbl" for="nt">${t.note}</label><input id="nt" value="${esc(S.note)}">
+    <p class="err">${S.err}</p><div class="nav2"><button class="btn ghost" id="bk">${t.back}</button><button class="btn" id="go">${t.confirm}</button></div>`;
+  }else{
+    h=`<div class="done"><div class="tick"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#E3C487" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h3>${t.done}</h3><p style="margin-top:8px">${esc(S.name)}, ${t.wants[S.want]}<br><b>${dLabel(S.date)}, ${fmtT(S.time)}</b></p>
+    <div class="ticket"><div class="code">${S.code}</div><p class="hint" style="margin-top:4px">${t.donep}</p></div>
+    <div class="row"><a class="btn sm ghost" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent("Varai Jewellers viewing: "+dLabel(S.date)+", "+fmtT(S.time)+". "+S.code)}">${t.wa}</a><button class="btn sm" id="again">${t.another}</button></div></div>`;
+  }
+  P.innerHTML=h;wire();
+}
+function wire(){
+  $$("[data-w]").forEach(e=>e.onclick=()=>{S.want=e.dataset.w;renderBook()});
+  $$("[data-d]").forEach(e=>e.onclick=()=>{S.date=e.dataset.d;S.time="";renderBook()});
+  $$("[data-t]").forEach(e=>e.onclick=()=>{S.time=e.dataset.t;S.err="";renderBook()});
+  const bk=$("#bk"),go=$("#go"),ag=$("#again");
+  if(bk)bk.onclick=()=>{keep();S.err="";S.step--;renderBook()};
+  if(ag)ag.onclick=()=>{S=fresh();renderBook()};
+  if(go)go.onclick=()=>{keep();const t=T[L];
+    if(S.step===1){S.step=2;S.err="";return renderBook()}
+    if(S.step===2){if(!S.time){S.err=t.e_time;return renderBook()}S.err="";S.step=3;return renderBook()}
+    if(S.name.trim().length<2){S.err=t.e_name;return renderBook()}
+    if(!/^[6-9]\d{9}$/.test(S.phone)){S.err=t.e_ph;return renderBook()}
+    const b=load();if(CAP-used(b,S.date,S.time)<=0){S.step=2;S.time="";S.err=t.e_gone;return renderBook()}
+    S.code="VJ-"+Math.floor(1000+Math.random()*9000);
+    b.push({id:"B"+Date.now(),date:S.date,time:S.time,want:S.want,name:S.name.trim(),phone:S.phone,note:S.note.trim(),status:"confirmed",code:S.code});
+    save(b);S.step=4;renderBook()};
+}
+function keep(){const n=$("#nm"),p=$("#ph"),t=$("#nt");if(n)S.name=n.value;if(p)S.phone=p.value.replace(/\D/g,"");if(t)S.note=t.value}
+
+/* staff */
+let authed=false;
+function renderAdmin(msg){
+  const t=T[L],A=$("#adminBody");
+  if(!authed){A.innerHTML=`<div class="pin"><h2>${t.a_pin}</h2><p class="hint">${t.a_pin_p} (demo: 1234)</p><input id="pin" type="password" inputmode="numeric" maxlength="4" autofocus><p class="err" id="pe"></p><button class="btn" id="pgo">${t.a_go}</button><p style="margin-top:20px"><a href="#top">${t.exit}</a></p></div>`;
+    const f=()=>{if($("#pin").value==="1234"){authed=true;renderAdmin()}else $("#pe").textContent=t.a_bad};$("#pgo").onclick=f;$("#pin").onkeydown=e=>{if(e.key==="Enter")f()};return}
+  const b=load().sort((x,y)=>(x.date+x.time).localeCompare(y.date+y.time)),td=iso(new Date()),act=b.filter(x=>x.status!=="cancelled");
+  A.innerHTML=`<p><a href="#top">${t.exit}</a></p><h2 style="margin-top:12px">${t.a_h}</h2>
+  <div class="stats"><div class="stat"><b>${act.filter(x=>x.date===td).length}</b><span>${t.a_t}</span></div><div class="stat"><b>${act.filter(x=>x.date>td).length}</b><span>${t.a_u}</span></div><div class="stat"><b>${act.length}</b><span>${t.a_g}</span></div></div>
+  <div class="panel"><label class="lbl" for="rt" style="margin-top:0">${t.a_rate}</label><div class="rin"><input id="rt" type="number" inputmode="numeric" value="${rate24()}"><button class="btn sm" id="rsv">${t.a_save}</button></div><p class="hint" style="color:var(--ok)">${msg||""}</p></div>
+  <div class="tw"><table><thead><tr><th>${t.a_when}</th><th>${t.a_who}</th><th>${t.a_for}</th><th>${t.a_code}</th><th>${t.a_st}</th><th></th></tr></thead><tbody>${b.length?b.map(x=>`<tr><td><b>${dLabel(x.date)}</b><br>${fmtT(x.time)}</td><td>${esc(x.name)}<br><small style="color:var(--mute)">${esc(x.phone)}${x.note?" · "+esc(x.note):""}</small></td><td>${t.wants[x.want]||""}</td><td><b>${x.code}</b></td><td><span class="pill ${x.status}">${t[x.status]}</span></td><td style="white-space:nowrap">${x.status==="confirmed"?`<button class="btn sm" data-a="${x.id}">${t.visit}</button> `:""}<button class="btn sm ghost" data-x="${x.id}">${x.status==="cancelled"?t.restore:t.cancel}</button></td></tr>`).join(""):`<tr><td colspan="6">${t.a_none}</td></tr>`}</tbody></table></div>
+  <p style="margin-top:20px"><button class="btn sm ghost" id="rs">${t.reset}</button></p>`;
+  $("#rsv").onclick=()=>{const v=Math.round(+$("#rt").value);if(v>1000){safe("vj_rate",String(v));renderRates();renderList();renderAdmin(t.a_saved)}};
+  $$("[data-x]").forEach(e=>e.onclick=()=>{const a=load(),i=a.find(y=>y.id===e.dataset.x);i.status=i.status==="cancelled"?"confirmed":"cancelled";save(a);renderAdmin()});
+  $$("[data-a]").forEach(e=>e.onclick=()=>{const a=load();a.find(y=>y.id===e.dataset.a).status="visited";save(a);renderAdmin()});
+  $("#rs").onclick=()=>{try{localStorage.removeItem(K);localStorage.removeItem("vj_rate")}catch(e){}renderRates();renderList();renderAdmin()};
+}
+function route(){const a=location.hash==="#admin";$("#site").style.display=a?"none":"";$("#admin").style.display=a?"block":"none";if(a){authed=false;renderAdmin();scrollTo(0,0)}}
+addEventListener("hashchange",route);
+applyLang();route();
+</script>
+</body>
+</html>
